@@ -1,0 +1,55 @@
+<div class="home">
+    <div class="content">
+        <div class="logo-container">
+            <div class="background-number">1.0</div>
+            <div class="logo">
+                <div class="st">
+                    <div class="st-top">
+                        <div class="st-bound st-bound-full"></div>
+                        <p><span class="st-drop st-stranger-s">T</span><span class="st-stranger-t">n</span><span class="st-stranger-r">a</span><span class="st-stranger-a">j</span><span class="st-stranger-n">e</span><span class="st-stranger-g">m</span>
+                        </p>
+                        <div class="st-bound st-bound-mini st-bound-left"></div>
+                        <div class="st-bound st-bound-mini st-bound-right"></div>
+                    </div>
+                    <div class="st-bottom">
+                        <p><span class="st-things-t">C</span><span class="st-things-h">S</span><span class="st-things-i">S</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <a href="./login/"><button>
+                    Login
+                </button></a>
+            <a href="./signup/" id="signup-link" style="display:none;"><button>
+                    Signup
+                </button></a>
+        </div>
+        <div class="Created_By">
+            <span>Tnajem CSS </span>
+            <span>is an Hackathon</span>
+            <span>organized by IEEE</span>
+            <span>COMPUTER SOCIETY CHAPTER</span>
+            <span>ENICARTHAGE STUDENT BRANCH</span>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    const secretSequence = ['I', 'E', 'E','E'];
+    let userSequence = [];
+
+    document.addEventListener('keydown', function(event) {
+        userSequence.push(event.key);
+
+        if (userSequence.join('').includes(secretSequence.join(''))) {
+            document.getElementById('signup-link').style.display = 'inline-block';
+        }
+
+        if (userSequence.length > secretSequence.length) {
+            userSequence.shift();
+        }
+    });
+
+</script>

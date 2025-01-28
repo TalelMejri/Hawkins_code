@@ -1,0 +1,34 @@
+<div class="signup_content">
+    <div class="box_signup">
+        <lottie-player class="lottie" src="https://lottie.host/22edef91-bdd5-4145-b968-19af06632ddc/WtMQDWTAo6.json" speed="1" style="width: 400px; height: 400px;" loop autoplay></lottie-player>
+        <form action="index.php" method="post">
+            <p>Good To See You Again</p>
+            <?php if (isset($errors['global'])): ?>
+                <small>
+                    <?= $errors['global']; ?>
+                </small>
+            <?php endif; ?>
+            <div class="input_test">
+                <input class="<?= isset($errors['nom']) ? " input_error" : "" ?>" type="text" name="nom" placeholder="enter your name" value="<?= $nom ?>">
+                <?php if (isset($errors['nom'])): ?>
+                    <small>
+                        <?= $errors['nom']; ?>
+                    </small>
+                <?php endif; ?>
+            </div>
+            <div class="input_test">
+                <input class="<?= isset($errors['password']) ? " input_error" : "" ?>" type="password" name="password" placeholder="*******" value="<?= $password ?>">
+                <?php if (isset($errors['password'])): ?>
+                    <small>
+                        <?= $errors['password']; ?>
+                    </small>
+                <?php endif; ?>
+            </div>
+            <div> <button name="submit" type="submit">Login</button></div>
+            <div class="back_home">
+            <a  href="../index.php">Go Back Home</a>
+
+            </div>
+        </form>
+    </div>
+</div>

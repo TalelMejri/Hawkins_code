@@ -1,0 +1,24 @@
+<div class="signup_content">
+    <div class="form_signup">
+        <form action="index.php" method="post">
+            <p>Create New Team</p>
+            <div class="input_test">
+                <input  class="<?= isset($errors['nom']) ? " input_error" : "" ?>" type="text" name="nom" placeholder="enter your name" value="<?=$nom?>">
+                <?php if (isset($errors['nom'])): ?>
+                    <small>
+                        <?= $errors['nom']; ?>
+                    </small>
+                <?php endif; ?>
+            </div>
+            <div class="input_test">
+                <input class="<?= isset($errors['password']) ? " input_error" : "" ?>" type="password" name="password" placeholder="*******" value="<?=$password?>">
+                <?php if (isset($errors['password'])): ?>
+                    <small>
+                        <?= $errors['password']; ?>
+                    </small>
+                <?php endif; ?>
+            </div>
+            <div> <button name="submit" type="submit">Create an account</button></div>
+        </form>
+    </div>
+</div>

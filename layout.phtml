@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$page_title?></title>
+    <?php if (empty($page)): ?>
+        <link rel="stylesheet" href="./assets/style.css">
+    <?php else: ?>
+        <link rel="stylesheet" href="../assets/style.css">
+    <?php endif; ?>
+</head>
+
+<body>
+    <?php if (empty($page)): ?>
+        <?php include "./HomePage.phtml"; ?>
+    <?php else: ?>
+        <?php include $page . ".phtml"; ?>
+    <?php endif; ?>
+</body>
+<?php if (empty($page)): ?>
+    <script src="./assets/script.js"></script>
+<?php else: ?>
+    <script src="../assets/script.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+<?php endif; ?>
+
+</html>
