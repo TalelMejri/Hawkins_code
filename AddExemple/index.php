@@ -32,9 +32,9 @@ if (isset($_POST["submit"])) {
         goto show;
     }
 
-    $type_exite = ["jpg", "png", "svg", "jpeg"];
+    $type_existe = ["jpg", "png", "svg", "jpeg"];
     $extension = pathinfo($file['name'], PATHINFO_EXTENSION);
-    if (!in_array($extension, $type_exite)) {
+    if (!in_array($extension, $type_existe)) {
         $errors["errors"] = "Photo Invalid";
         goto show;
     }
