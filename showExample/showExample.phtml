@@ -1,102 +1,26 @@
 <div class="showEx">
     <p class="headerShowExample">EXAMPLES</p>
     <div class="grid">
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
+        <?php foreach ($problems as $problem) { ?>
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <p class="title"><?php echo $problem["name"] ?> </p>
+                        <p>Points : <?php echo $problem["points"] ?></p>
+                        <p><?php echo $problem["IsCompleted"] ? "isCompleted":"Not Completed" ?></p>
+                        <p><?php echo $problem["IsOpen"] ? "IsOpen":"Not Open" ?></p>
+                        <p>Duration : <?php echo $problem["Duration"] ?></p>
+                        <p><?php echo $problem["DateOpen"] ?></p>
+                    </div>
+                    <div class="flip-card-back">
+                        <div class="title" >
+                            <img width="170px" style="border-radius: 10px; max-height:247px"
+                                src="../Problems_photo/<?php echo $problem["photo"] ?>" alt="">
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
-        <div class="flip-card">
-            <div class="flip-card-inner">
-                <div class="flip-card-front">
-                    <p class="title">FLIP CARD</p>
-                    <p>Hover Me</p>
-                </div>
-                <div class="flip-card-back">
-                    <p class="title">BACK</p>
-                    <p>Leave Me</p>
-                </div>
-            </div>
-        </div>
+        <?php } ?>
     </div>
     <div class="pag">
         <div class="pagination">
