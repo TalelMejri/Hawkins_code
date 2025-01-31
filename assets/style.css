@@ -555,6 +555,7 @@ tr:hover {
 .showEx{
     background-color: beige;
     padding: 30px;
+    height: 100vh;
     gap: 10px;
 }
 .grid{
@@ -568,8 +569,9 @@ tr:hover {
 
 .flip-card {
     background-color: transparent;
-    width: 200px;
-    height: 290px;
+    width: 180px;
+    height: 249px;
+    cursor: pointer;
     perspective: 1000px;
     font-family: sans-serif;
   }
