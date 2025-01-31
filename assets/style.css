@@ -413,14 +413,13 @@ video.bg-video {
     z-index: 2;
 }
 
-@media screen and (max-width: 768px) {
-    .content_text {
-        font-size: 18px;
-    }
-}
 
 
 @media screen and (max-width:750px) {
+    .content_text {
+        font-size: 18px;
+    }
+
     .st {
         font-size: 3rem;
     }
@@ -453,3 +452,37 @@ video.bg-video {
         display: none;
     }
 }
+
+.content_new_example {
+    background-color: antiquewhite;
+}
+
+.content_new_example form {
+    height: 100vh;
+    line-height: 60px;
+    text-align: left;
+    background: linear-gradient(to top, #450100, #ed2b12);
+}
+
+.box_new_example {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.box_new_example .header_text{
+    color: #fff;
+    font-weight: bold;
+    color: #000;
+    font-size: 20px;
+}
+
+.box_new_example input{
+    border-radius: 10px;
+    border:none;
+}
+
+.box_new_example label{
+    color: #fff;
+}
+

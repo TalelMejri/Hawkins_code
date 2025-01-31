@@ -1,0 +1,42 @@
+<div class="content_new_example">
+    <div class="box_new_example">
+        <div>
+            <form action="index.php" method="post" enctype="multipart/form-data">
+                <p class="header_text">Add New Exemple</p>
+                <?php if (isset($errors['errors'])): ?>
+                    <div style="background-color: #fff;padding: 5px;border-radius: 10px;text-align: center;font-size: 18px;">
+                        <small>
+                            <?= $errors['errors']; ?>
+                        </small>
+                    </div>
+                <?php endif; ?>
+                <div>
+                    <label>Name :</label>
+                    <input type="text" name="name" value="<?= $name ?>">
+                </div>
+                <div>
+                    <label>Points :</label>
+                    <input type="number" name="points" value="<?= $points ?>">
+                </div>
+                <div>
+                    <label>Photo :</label>
+                    <input type="file" name="photo">
+                </div>
+                <div>
+                    <label>Duration :</label>
+                    <input type="number" name="duration" value="<?= $duration ?>">
+                </div>
+                <div>
+                    <button type="submit" name="submit">
+                        New Example
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <video class="video_add_example" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+                <source src="../assets/videos/teaser.mp4" type="video/mp4" />
+            </video>
+        </div>
+    </div>
+</div>
