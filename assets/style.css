@@ -739,23 +739,23 @@ video.bg-video {
     overflow: hidden;
 }
 
-.box_new_example .header_text{
+.box_new_example .header_text {
     color: #fff;
     font-weight: bold;
     color: #000;
     font-size: 20px;
 }
 
-.box_new_example input{
+.box_new_example input {
     border-radius: 10px;
-    border:none;
+    border: none;
 }
 
-.box_new_example label{
+.box_new_example label {
     color: #fff;
 }
 
-.contentScoreboard{
+.contentScoreboard {
     background: linear-gradient(to bottom, #D32F2F, #757575);
     display: flex;
     justify-content: center;
@@ -763,6 +763,7 @@ video.bg-video {
     height: 100vh;
     margin: 0;
 }
+
 .leaderboard {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
@@ -770,7 +771,8 @@ video.bg-video {
     padding: 30px;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-    width: 1300px; /* Make it bigger */
+    width: 1300px;
+    /* Make it bigger */
     height: 550px;
 }
 
@@ -786,10 +788,12 @@ table {
     background: rgba(255, 255, 255, 0.2);
     border-radius: 10px;
     overflow: hidden;
-    font-size: 20px; /* Make text bigger */
+    font-size: 20px;
+    /* Make text bigger */
 }
 
-th, td {
+th,
+td {
     padding: 15px;
     text-align: center;
     color: white;
@@ -814,22 +818,24 @@ tr:hover {
 }
 
 
-.headerShowExample{
+.headerShowExample {
     text-align: center;
     font-size: 30px;
     margin-bottom: 20px;
     font-family: sans-serif;
     font-weight: bold;
 }
-.showEx{
+
+.showEx {
     background-color: beige;
     padding: 30px;
     height: 100vh;
     gap: 10px;
 }
-.grid{
+
+.grid {
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
     flex: auto;
@@ -843,30 +849,31 @@ tr:hover {
     cursor: pointer;
     perspective: 1000px;
     font-family: sans-serif;
-  }
-  
-  .title {
+}
+
+.title_box {
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
     margin: 0;
-  }
-  
-  .flip-card-inner {
+}
+
+.flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
-  
-  .flip-card:hover .flip-card-inner {
+}
+
+.flip-card:hover .flip-card-inner {
     transform: rotateY(180deg);
-  }
-  
-  .flip-card-front, .flip-card-back {
-    box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card-front,
+.flip-card-back {
+    box-shadow: 0 8px 14px 0 rgba(0, 0, 0, 0.2);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -877,43 +884,226 @@ tr:hover {
     backface-visibility: hidden;
     border: 1px solid coral;
     border-radius: 1rem;
-  }
-  
-  .flip-card-front {
+}
+
+.flip-card-front {
     background: linear-gradient(120deg, bisque 60%, rgb(255, 231, 222) 88%,
-       rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
+            rgb(255, 211, 195) 40%, rgba(255, 127, 80, 0.603) 48%);
     color: coral;
-  }
-  
-  .flip-card-back {
+}
+
+.flip-card-back {
     background: linear-gradient(120deg, rgb(255, 174, 145) 30%, coral 88%,
-       bisque 40%, rgb(255, 185, 160) 78%);
+            bisque 40%, rgb(255, 185, 160) 78%);
     color: white;
     transform: rotateY(180deg);
-  }
+}
 
 
-  .pagination {
+.pagination {
     display: inline-block;
-  }
-  .pag{
-    text-align: center;
-  }
-  .pagination a {
+}
+
+.pag {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.select_content {
+    padding: 10px;
+}
+
+.pag form {
+    padding: 0;
+    margin: 0;
+}
+
+.select_content select {
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+}
+
+.pagination a {
     margin-top: 25px;
     color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
-  }
-  
-  .pagination a.active {
+}
+
+.pagination a.active {
     background-color: coral;
     color: white;
     border-radius: 5px;
-  }
-  
-  .pagination a:hover:not(.active) {
+}
+
+.pagination a:hover:not(.active) {
     background-color: #ddd;
     border-radius: 5px;
-  }
+}
+.disabled_link {
+    cursor: not-allowed !important;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.btn_card_flip {
+    margin-top: 5px;
+}
+
+.btn_card_flip a {
+    text-decoration: none;
+}
+
+.btn_card_flip button {
+    padding: 5px;
+    background-color: #D32F2F;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.btn_card_flip button:hover {
+    background-color: #fff;
+    color: #D32F2F;
+}
+
+.vide {
+    text-align: center;
+    font-size: 18px;
+    color: red;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.submission_content {
+    padding: 15px;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right,#fff,#450100);
+}
+
+.submission_content .head {
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    padding-top: 20px;
+    font-weight: bold;
+    animation: animate_sub 1.5s infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+@keyframes animate_sub {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.submission_content .content {
+    display: grid;
+    margin: 80px;
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+.submission_content .content .box {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.submission_content .content .box .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #450100;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.submission_content .content .box .body .box_title {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.submission_content .content .box .body .list_teams{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    align-items: center;
+
+}
+
+.submission_content .content .box .body .list_teams_content{
+    overflow-y: scroll;
+    max-height: 200px;
+    position: relative;
+}
+
+ .btn_sub {
+    background-color: #fff;
+    color: #450100; 
+    border: 1px solid #450100;
+    cursor: pointer;
+    border-radius: 5px;
+    padding:5px;
+    transition: all 0.4s ease-in-out;
+}
+
+ .btn_sub:hover{
+    border: none;
+    background-color: #450100;
+    color: #ffff; 
+}
+
+.content_submission {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.content_submission .sub_content_form{
+    background: transparent;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.input_sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.content_submission .text{
+    text-align: center;
+    margin-top:5px ;
+}
+
+.content_submission .content{
+    display: flex;
+    justify-content: space-evenly;
+}
