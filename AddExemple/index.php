@@ -41,10 +41,10 @@ if (isset($_POST["submit"])) {
 
     $file_name = md5(rand()) . "." . $extension;
 
-    if (!move_uploaded_file($file['tmp_name'], '../Problems_photo/' . $file_name)) {
-        $errors["errors"] = "Failed Uploaded";
-        goto show;
-    }
+    //if (!move_uploaded_file($file['tmp_name'], '../Problems_photo/' . $file_name)) {
+    //    $errors["errors"] = "Failed Uploaded";
+    //    goto show;
+    //}
 
     if (empty($errors)) {
         $query = $pdo->prepare("INSERT INTO `problems`(`name`, `photo`, `points`, `IsCompleted`, `IsOpen`, `Duration`, `DateOpen`) VALUES (:name,:photo,:pts,:iscomp,:isopen,:duration,:DateOpen)");

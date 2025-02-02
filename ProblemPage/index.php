@@ -8,8 +8,12 @@ if (isset($_POST["submit"])){
         $type_dispo=["html"];
         $type_current=pathinfo($file["name"],PATHINFO_EXTENSION);
         if(!in_array($type_current,$type_dispo)){
-            $errors['message'] = "Invalid Type";
-}
+            $errors['message'] = "Invalid Type. Please enter a HTML file";
+    }
+    //uploaded failed !!!!!!!!!!!
+    if (empty($errors)){
+        $req=$pdo->prepare("INSERT INTO `team_problems` ");
+    }
 }
 
 
