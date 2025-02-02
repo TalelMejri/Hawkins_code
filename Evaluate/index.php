@@ -5,8 +5,6 @@ if (!isset($_SESSION['id'])) {
     header("location:../login");
 }
 
-
-
 if (isset($_POST['submit_rang'])) {
     $query = $pdo->prepare("
                  select
@@ -28,7 +26,6 @@ if (isset($_POST['submit_rang'])) {
     //var_dump('Duration ' .$duration);
     $answer=$_POST['range'];
    // var_dump("tetetetet" .$date_final < ($duration / 2));
-    exit();
     if ($date_final < ($duration / 2)) {
         if ($answer > 15) {
             $answer += $problem_submission['points'] + 5;

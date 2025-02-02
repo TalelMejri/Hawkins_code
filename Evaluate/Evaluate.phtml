@@ -14,7 +14,7 @@
                         <p class="box_title">List of Teams</p>
                         <div class="list_teams_content">
                             <?php foreach ($problem["submissions"] as $submission): ?>
-                                <div class="list_teams <?= $submission['score']==0 ? '' :'disabled_link' ?>">
+                                <div class="list_teams <?= $submission['score'] == 0 ? '' : 'disabled_link' ?>">
                                     <p>Team <?= $submission["idTeam"] ?></p>
                                     <button class="btn_sub" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">Show Submission</button>
                                 </div>
@@ -38,7 +38,7 @@
                                             <p>Value: <output id="value">0</output></p>
                                         </div>
                                         <div>
-                                            <button  type="submit" name="submit_rang">
+                                            <button type="submit" name="submit_rang">
                                                 Add
                                             </button>
                                             <button style="background-color: gray;" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">
@@ -58,7 +58,8 @@
 
 
 <script>
-    const value = document.querySelector("#range_val");
+    try{
+        const value = document.querySelector("#range_val");
     const output = document.querySelector("#value");
     value.addEventListener("input", (event) => {
         output.textContent = event.target.value
@@ -67,6 +68,9 @@
     function HideContentSubmission(id) {
         const content = document.querySelector(".Add_Submission_" + id);
         content.style.display = content.style.display == "block" ? 'none' : 'block';
-        //content.
     }
+    }catch(e){
+
+    }
+   
 </script>

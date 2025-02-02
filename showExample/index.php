@@ -6,7 +6,7 @@ if(!isset($_SESSION['id'])){
  }
 
 if (isset($_GET['IsOpen'])) {
-    $query_count = $pdo->prepare("Update `problems` Set IsOpen=:isopen ans DateOpen=:DateOpen where id=:id");
+    $query_count = $pdo->prepare("Update `problems` Set IsOpen=:isopen , DateOpen=:DateOpen where id=:id");
     $query_count->execute([
         "isopen" => 1,
         "id" => $_GET['IsOpen'],
