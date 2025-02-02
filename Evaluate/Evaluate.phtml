@@ -14,7 +14,7 @@
                         <p class="box_title">List of Teams</p>
                         <div class="list_teams_content">
                             <?php foreach ($problem["submissions"] as $submission): ?>
-                                <div class="list_teams">
+                                <div class="list_teams <?= $submission['score']==0 ? '' :'disabled_link' ?>">
                                     <p>Team <?= $submission["idTeam"] ?></p>
                                     <button class="btn_sub" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">Show Submission</button>
                                 </div>
@@ -33,11 +33,12 @@
                                     <form action="index.php" method="post" class="sub_content_form">
                                         <div class="input_sub">
                                             <label for="range">Add Your Score</label>
-                                            <input id="range_val" type="range" name="rang" min="0" max="20" step="1" value="0">
+                                            <input type="hidden" name="idTp" value="<?= $submission['IdTP'] ?>">
+                                            <input id="range_val" type="range" name="range" min="0" max="20" step="1" value="0">
                                             <p>Value: <output id="value">0</output></p>
                                         </div>
                                         <div>
-                                            <button type="submit" name="submit_rang">
+                                            <button  type="submit" name="submit_rang">
                                                 Add
                                             </button>
                                             <button style="background-color: gray;" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">

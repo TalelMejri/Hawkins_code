@@ -6,10 +6,11 @@ if(!isset($_SESSION['id'])){
  }
 
 if (isset($_GET['IsOpen'])) {
-    $query_count = $pdo->prepare("Update `problems` Set IsOpen=:isopen where id=:id");
+    $query_count = $pdo->prepare("Update `problems` Set IsOpen=:isopen ans DateOpen=:DateOpen where id=:id");
     $query_count->execute([
         "isopen" => 1,
-        "id" => $_GET['IsOpen']
+        "id" => $_GET['IsOpen'],
+        "DateOpen" => (new DateTime())->format('Y-m-d H:i:s'),
     ]);
 }
 
