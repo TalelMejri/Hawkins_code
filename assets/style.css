@@ -527,3 +527,67 @@ video.bg-video {
     width: 100%;
     z-index: 2;
 }
+
+.problemPageContainer{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    background: linear-gradient(25deg, #3a0d0d, #a50401);;
+}
+
+.leftBox{
+    width: 68%;
+
+}
+.rightBox{
+    width: 32%;
+    backdrop-filter: blur(20px);  background: rgba(207, 147, 147, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;}
+
+.submitForm {
+    height: 80%;
+    width: 80%;
+    background-image: linear-gradient(43deg, #f84f4f 0%, #ff0000 46%, #85071c 100%);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s ease-in-out;
+    padding-bottom: -20%;
+}
+
+.problemTitle {
+    text-align: center;
+    font-weight: 600;
+    padding-top: 1rem;
+    font-size: large;
+}
+
+.submit {
+    text-align: center;
+    padding: 8px 3rem;
+    border: none;
+    border-top-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    background-color: black;
+    color: white;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.submit:hover {
+    box-shadow: rgba(44, 43, 43, 0.664) 5px 5px, rgba(45, 45, 45, 0.3) 10px 10px, rgba(60, 59, 59, 0.2) 15px 15px, rgba(54, 53, 53, 0.1) 20px 20px, rgba(240, 46, 170, 0.05) 25px 25px;
+}
+
+.problemData{
+    height: 80%;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
