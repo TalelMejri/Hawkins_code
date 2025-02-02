@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php if (empty($page)): ?>
+    <?php if (empty($page) && !isset($_SESSION['id'])): ?>
         <?php include "./HomePage.phtml"; ?>
     <?php else: ?>
         <?php include $page . ".phtml"; ?>

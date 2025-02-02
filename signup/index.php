@@ -3,6 +3,17 @@
 
 include "../dbConnected.php";
 
+
+if(isset($_SESSION['id'])){
+    if($verify_team['IsAdmin']){
+       header("location:../AdminProfil");
+    }else{
+       header("location:../TeamProfil");
+    }
+}else{
+    header("location:../login");
+}
+
 $nom = "";
 $errors = [];
 $password = "";

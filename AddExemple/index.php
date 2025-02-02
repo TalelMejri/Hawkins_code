@@ -1,11 +1,17 @@
 <?php
 
 include "../dbConnected.php";
+
+session_start();
+
+if(!isset($_SESSION['id'])){
+    header("location:../login");
+ }
+
 $errors = [];
 $name = "";
 $points = 0;
 $duration = 0;
-
 
 if (isset($_POST["submit"])) {
     $name = $_POST['name'];
@@ -57,7 +63,7 @@ if (isset($_POST["submit"])) {
             "duration" => $duration,
             "DateOpen" => (new DateTime())->format('Y-m-d H:i:s'),
         ]);
-        header("location:");
+        header("location:../showExample");
     }
 }
 

@@ -1,37 +1,89 @@
 <div class="showEx">
     <p class="headerShowExample">EXAMPLES</p>
-    <div class="grid">
-        <?php foreach ($problems as $problem) { ?>
-            <div class="flip-card">
-                <div class="flip-card-inner">
-                    <div class="flip-card-front">
-                        <p class="title"><?php echo $problem["name"] ?> </p>
-                        <p>Points : <?php echo $problem["points"] ?></p>
-                        <p><?php echo $problem["IsCompleted"] ? "isCompleted":"Not Completed" ?></p>
-                        <p><?php echo $problem["IsOpen"] ? "IsOpen":"Not Open" ?></p>
-                        <p>Duration : <?php echo $problem["Duration"] ?></p>
-                        <p><?php echo $problem["DateOpen"] ?></p>
-                    </div>
-                    <div class="flip-card-back">
-                        <div class="title" >
-                            <img width="170px" style="border-radius: 10px; max-height:247px"
-                                src="../Problems_photo/<?php echo $problem["photo"] ?>" alt="">
+    <?php if (empty($problems)): ?>
+        <div class="vide">
+            No Problems
+        </div>
+    <?php else: ?>
+        <div class="grid">
+            <?php foreach ($problems as $problem) { ?>
+                <div class="flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front">
+                            <p class="title"><?php echo $problem["name"] ?> </p>
+                            <p>Points : <?php echo $problem["points"] ?></p>
+                            <p><?php echo $problem["IsCompleted"] ? "isCompleted" : "Not Completed" ?></p>
+                            <p><?php echo $problem["IsOpen"] ? "IsOpen" : "Not Open" ?></p>
+                            <p>Duration : <?php echo $problem["Duration"] ?></p>
+                            <p>Date Open : <br> <?php echo $problem["DateOpen"] ?></p>
+                        </div>
+                        <div class="flip-card-back">
+                            <div class="title">
+                                <img width="170px" style="border-radius: 10px; max-height:200px"
+                                    src="../Problems_photo/<?php echo $problem["photo"] ?>" alt="">
+                                <div class="btn_card_flip">
+                                    <a class="<?= $problem['IsOpen'] == true ? 'disabled_link' : '' ?>" href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $page_current ?>&IsOpen=<?= $problem['id'] ?>">
+                                        <button class="<?= $problem['IsOpen'] == true ? 'disabled_link' : '' ?>">
+                                            Open
+                                        </button>
+                                    </a>
+                                    <a class="<?= $problem['IsCompleted'] == true || $problem['IsOpen'] == false  ? 'disabled_link' : '' ?>" href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $page_current ?>&IsExpired=<?= $problem['id'] ?>">
+                                        <button class="<?= $problem['IsCompleted'] == true || $problem['IsOpen'] == false ? 'disabled_link' : '' ?>">
+                                            Expired
+                                        </button>
+                                    </a>
+                                    <a href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $page_current ?>&delete=<?= $problem['id'] ?>">
+                                        <button>
+                                            Delete
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        <?php } ?>
-    </div>
+            <?php } ?>
+
+        </div>
+    <?php endif; ?>
     <div class="pag">
+        <form action="index.php" method="get">
+            <input type="hidden" id="selected_record" value=<?= isset($_GET['record']) ? $_GET['record'] : 5 ?>>
+            <div class="select_content">
+                <select name="record" id="record" onchange="this.form.submit()">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="100">100</option>
+                </select>
+            </div>
+        </form>
         <div class="pagination">
-            <a href="#">&laquo;</a>
-            <a href="#">1</a>
-            <a href="#" class="active">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">&raquo;</a>
+            <a class="<?= $previous == $page_current ? 'disabled_link' : '' ?>" href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $previous ?>">&laquo;</a>
+            <?php for ($i = 1; $i <= $pages; $i++):
+                if ($i == $page_current) {
+                    $active = "active";
+                } else {
+                    $active = "";
+                }
+            ?>
+                <a href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $i ?>" class="<?= $active ?>"><?= $i ?></a>
+            <?php endfor; ?>
+            <a class="<?= $next == $page_current ? 'disabled_link' : '' ?>" href="index.php?<?= isset($_GET['record']) ? 'record=' . $_GET['record'] . '&' : '' ?>page=<?= $next ?>">&raquo;</a>
+        </div>
+        <div>
+            <span>Showing 1 to <?= isset($_GET['record']) ? $_GET['record'] : 5 ?> of <?= $count_user ?> </span>
         </div>
     </div>
 </div>
+
+
+<script>
+    let hidden = document.getElementById('selected_record').value;
+    let select_list = document.querySelector("#record");
+    for (i = 0; i < select_list.length; i++) {
+        if (select_list[i].value == hidden) {
+            select_list[i].setAttribute('selected', 'selected');
+        }
+    }
+</script>
