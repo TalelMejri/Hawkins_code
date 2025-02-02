@@ -1,0 +1,71 @@
+<div class="submission_content">
+    <p class="head">Submissions</p>
+    <div class="content">
+        <?php if (empty($problems)): ?>
+            <p style="display:flex;justify-content:center"> No Submissions Yet
+            </p> <?php else: ?>
+            <?php foreach ($problems as $idprob => $problem): ?>
+                <div class="box">
+                    <div class="header">
+                        <p> <?= $problem["name"] ?></p>
+                        <p>Submissions: <?= count($problem["submissions"]) ?></p>
+                    </div>
+                    <div class="body">
+                        <p class="box_title">List of Teams</p>
+                        <div class="list_teams_content">
+                            <?php foreach ($problem["submissions"] as $submission): ?>
+                                <div class="list_teams">
+                                    <p>Team <?= $submission["idTeam"] ?></p>
+                                    <button class="btn_sub" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">Show Submission</button>
+                                </div>
+                                <div class="Add_Submission_<?= $submission['IdTP'] ?> content_submission">
+                                    <p class="text">Problem Name : <?= $problem['name'] ?></p>
+                                    <div class="content">
+                                        <div>
+                                            <p>Origin</p>
+                                            <img width="400px" height="300px" src="../Problems_photo/<?= $problem['photo'] ?>">
+                                        </div>
+                                        <div style="background-color: #fff; padding: 12px;">
+                                            <p style="color: #000;">Submission</p>
+                                            <iframe src="../SubmissionFiles/<?= $submission['pathFile'] ?>" width="400px" height="300px"></iframe>
+                                        </div>
+                                    </div>
+                                    <form action="index.php" method="post" class="sub_content_form">
+                                        <div class="input_sub">
+                                            <label for="range">Add Your Score</label>
+                                            <input id="range_val" type="range" name="rang" min="0" max="20" step="1" value="0">
+                                            <p>Value: <output id="value">0</output></p>
+                                        </div>
+                                        <div>
+                                            <button type="submit" name="submit_rang">
+                                                Add
+                                            </button>
+                                            <button style="background-color: gray;" onclick="HideContentSubmission(<?= $submission['IdTP'] ?> )">
+                                                Cancel
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
+</div>
+
+
+<script>
+    const value = document.querySelector("#range_val");
+    const output = document.querySelector("#value");
+    value.addEventListener("input", (event) => {
+        output.textContent = event.target.value
+    });
+
+    function HideContentSubmission(id) {
+        const content = document.querySelector(".Add_Submission_" + id);
+        content.style.display = content.style.display == "block" ? 'none' : 'block';
+        //content.
+    }
+</script>

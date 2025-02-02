@@ -29,7 +29,7 @@ if (isset($_GET['delete'])) {
 }
 
 $page_current = isset($_GET['page']) && is_numeric($_GET['page']) ? $_GET['page'] : 1;
-$limit = isset($_GET['record']) && is_numeric($_GET['record']) ? $_GET['record'] : 1;
+$limit = isset($_GET['record']) && is_numeric($_GET['record']) ? $_GET['record'] : 5;
 $query_count = $pdo->prepare("select count(id) from problems");
 $query_count->execute();
 $count_user = $query_count->fetch()['count(id)'];

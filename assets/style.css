@@ -582,7 +582,7 @@ tr:hover {
     font-family: sans-serif;
 }
 
-.title {
+.title_box {
     font-size: 1.5em;
     font-weight: 900;
     text-align: center;
@@ -643,7 +643,7 @@ tr:hover {
 }
 
 .select_content {
-    padding:10px;
+    padding: 10px;
 }
 
 .pag form {
@@ -677,21 +677,21 @@ tr:hover {
     border-radius: 5px;
 }
 
-.disabled_link{
+.disabled_link {
     cursor: not-allowed !important;
-    pointer-events: none; 
-    opacity: 0.5; 
+    pointer-events: none;
+    opacity: 0.5;
 }
 
-.btn_card_flip{
+.btn_card_flip {
     margin-top: 5px;
 }
 
-.btn_card_flip a{
+.btn_card_flip a {
     text-decoration: none;
 }
 
-.btn_card_flip button{
+.btn_card_flip button {
     padding: 5px;
     background-color: #D32F2F;
     color: #fff;
@@ -701,15 +701,141 @@ tr:hover {
     transition: all 0.4s ease-in-out;
 }
 
-.btn_card_flip button:hover{
+.btn_card_flip button:hover {
     background-color: #fff;
     color: #D32F2F;
 }
 
-.vide{
+.vide {
     text-align: center;
     font-size: 18px;
     color: red;
     font-weight: bold;
     margin-top: 30px;
+}
+
+.submission_content {
+    padding: 15px;
+    height: 100%;
+    position: relative;
+    background: linear-gradient(to right,#fff,#450100);
+}
+
+.submission_content .head {
+    text-align: center;
+    font-size: 25px;
+    color: #fff;
+    padding-top: 20px;
+    font-weight: bold;
+    animation: animate_sub 1.5s infinite;
+    transition: all 0.4s ease-in-out;
+}
+
+@keyframes animate_sub {
+    0% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.submission_content .content {
+    display: grid;
+    margin: 80px;
+    position: relative;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+}
+
+.submission_content .content .box {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    position: relative;
+}
+
+.submission_content .content .box .header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #450100;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.submission_content .content .box .body .box_title {
+    text-align: center;
+    padding-top: 15px;
+}
+
+.submission_content .content .box .body .list_teams{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 15px;
+    align-items: center;
+
+}
+
+.submission_content .content .box .body .list_teams_content{
+    overflow-y: scroll;
+    max-height: 200px;
+    position: relative;
+}
+
+ .btn_sub {
+    background-color: #fff;
+    color: #450100; 
+    border: 1px solid #450100;
+    cursor: pointer;
+    border-radius: 5px;
+    padding:5px;
+    transition: all 0.4s ease-in-out;
+}
+
+ .btn_sub:hover{
+    border: none;
+    background-color: #450100;
+    color: #ffff; 
+}
+
+.content_submission {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.content_submission .sub_content_form{
+    background: transparent;
+    text-align: center;
+    margin-top: -100px;
+}
+
+.input_sub{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3px;
+}
+
+.content_submission .text{
+    text-align: center;
+    margin-top:5px ;
+}
+
+.content_submission .content{
+    display: flex;
+    justify-content: space-evenly;
 }
