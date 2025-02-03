@@ -7,12 +7,6 @@ if (!isset($_SESSION['id'])) {
    header("location:../login");
 }
 
-
-session_start();
-if(!isset($_SESSION['id'])){
-   header("location:../login");
-}
-
 $page = "AdminProfil";
 $page_title = "Admin Profil";
 include "../layout.phtml";

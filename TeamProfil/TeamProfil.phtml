@@ -13,62 +13,24 @@
         
     </div>
 </div>
-        <div class="cards" id="cards">
+<div class="cards" id="cards">
+    <?php
+        foreach($open_problems as $prblm){?>
             <div class="card">
+            <?php if ($prblm["IsCompleted"] == 0){?>
+                <a style="text-decoration:none;color:white" href="../ProblemPage?id=<?=$prblm["id"]?>&name=<?=$prblm["name"]?>&time=<?=substr($prblm["DateOpen"],11)?>&Duration=<?=$prblm["Duration"]?>&points=<?=$prblm["points"]?>">
+                <?php } ?>
                 <div class="card_header">
-                    Exemple 1
+                    <?= $prblm["name"]?>
                 </div>
                 <div class="card_body">
-                    <span class="status">Status: <b>Available</b></span>
-                    <p>Time: 14:00:00</p>
-                    <p>Duration: 3h</p>
+                    <span class="status">Status: <b><?= ($prblm["IsCompleted"])? "Expired" : "Available"?></b></span>
+                <p>Time: <?= substr($prblm["DateOpen"],11)?></p>
+                    <p>Duration: <?=$prblm["Duration"]."h" ?></p>
                 </div>
                 <div class="card_footer">
-                    <p>Points: <b>100</b></p>
+                    <p>Points: <b><?= $prblm["points"]?></b></p>
                 </div>
+                </a>
             </div>
-            <div class="card">
-                <div class="card_header">
-                    Exemple 2
-                </div>
-                <div class="card_body">
-                    <span class="status">Status: <b>Unavailable</b></span>
-                </div>
-                <div class="card_footer">
-                    <p>Points: <b>150</b></p>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_header">
-                    Carta2
-                </div>
-                <div class="card_body">
-                    3awwwwww2
-                </div>
-                <div class="card_footer">
-                    3awwwwww2
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_header">
-                    Carta2
-                </div>
-                <div class="card_body">
-                    3awwwwww2
-                </div>
-                <div class="card_footer">
-                    3awwwwww2
-                </div>
-            </div>
-            <div class="card">
-                <div class="card_header">
-                    Carta2
-                </div>
-                <div class="card_body">
-                    3awwwwww2
-                </div>
-                <div class="card_footer">
-                    3awwwwww2
-                </div>
-            </div>
-        </div>
+    <?php }?>

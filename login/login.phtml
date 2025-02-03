@@ -9,7 +9,7 @@
                 </small>
             <?php endif; ?>
             <div class="input_test">
-                <input class="<?= isset($errors['nom']) ? " input_error" : "" ?>" type="text" name="nom" placeholder="enter your name" value="<?= $nom ?>">
+                <input class="<?= isset($errors['nom']) ? " input_error" : "" ?>" type="text" name="nom" placeholder="enter your team's name" value="<?= $nom ?>">
                 <?php if (isset($errors['nom'])): ?>
                     <small>
                         <?= $errors['nom']; ?>
