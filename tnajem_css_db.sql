@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 jan. 2025 à 21:22
+-- Généré le : lun. 03 fév. 2025 à 00:15
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -35,8 +35,17 @@ CREATE TABLE `problems` (
   `IsCompleted` tinyint(4) NOT NULL,
   `IsOpen` tinyint(4) NOT NULL,
   `Duration` int(11) NOT NULL,
-  `DateOpen` datetime NOT NULL
+  `DateOpen` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `problems`
+--
+
+INSERT INTO `problems` (`id`, `name`, `photo`, `points`, `IsCompleted`, `IsOpen`, `Duration`, `DateOpen`) VALUES
+(6, 'test1', 'b23cc50b0dc5644c44b59caf2b93de4e.jpg', 10, 0, 0, 10, '2025-02-02 22:19:00'),
+(7, 'test2', '8a56dda450bd37f9c39671b444749294.jpg', 30, 0, 0, 2, '2025-02-02 18:18:23'),
+(8, 'test3', '8d3cc1b0798e20cdc90d8b6c5e2b1b77.png', 45, 0, 1, 50, '2025-02-02 22:19:00');
 
 -- --------------------------------------------------------
 
@@ -73,8 +82,21 @@ CREATE TABLE `team_problems` (
   `idProblems` int(11) NOT NULL,
   `IdTeam` int(11) NOT NULL,
   `Score` int(11) NOT NULL,
-  `pathFile` varchar(255) NOT NULL
+  `pathFile` varchar(255) NOT NULL,
+  `date_submission` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `team_problems`
+--
+
+INSERT INTO `team_problems` (`id`, `idProblems`, `IdTeam`, `Score`, `pathFile`, `date_submission`) VALUES
+(5, 6, 1, 9, 'index.html', '2025-02-02 18:19:10'),
+(6, 6, 2, 11, 'index.html', '2025-02-02 18:19:29'),
+(7, 6, 5, 0, 'index.html', '2025-02-02 18:19:47'),
+(8, 7, 5, 0, 'index.html', '2025-02-02 18:20:02'),
+(9, 8, 5, 0, 'index.html', '2025-02-02 18:20:16'),
+(10, 7, 2, 0, 'index.html', '2025-02-02 18:20:31');
 
 --
 -- Index pour les tables déchargées
@@ -109,7 +131,7 @@ ALTER TABLE `team_problems`
 -- AUTO_INCREMENT pour la table `problems`
 --
 ALTER TABLE `problems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT pour la table `teams`
@@ -121,7 +143,7 @@ ALTER TABLE `teams`
 -- AUTO_INCREMENT pour la table `team_problems`
 --
 ALTER TABLE `team_problems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Contraintes pour les tables déchargées
