@@ -3,6 +3,9 @@ include "../dbConnected.php";
 session_start();
 if (empty($_GET["id"])||empty($_GET["name"])||empty($_GET["time"])||empty($_GET["Duration"])||empty($_GET["points"]))
     header("location:../TeamProfil");
+$req1=$pdo->prepare("SELECT photo FROM problems WHERE id=:id");
+$req1->execute(["id"=> $_GET["id"]]);
+$row1=$req1->fetch();
 
 $errors=[];
 if (isset($_POST["submit"])){

@@ -1,5 +1,7 @@
 <div class="problemPageContainer">
-    <div class="leftBox"></div>
+    <div class="leftBox">
+        <img src="../Problems_photo/<?= $row1["photo"] ?>" alt="" style="max-width:100%;border-radius:7px;border: solid 3px black">
+    </div>
     <div class="rightBox">
         <form action="index.php?id=<?=$_GET["id"]?>&name=<?=$_GET["name"]?>&time=<?=$_GET["time"]?>&Duration=<?=$_GET["Duration"]?>&points=<?=$_GET["points"] ?>" class="ProblemForm" method="post" enctype="multipart/form-data">
         <fieldset class="fieldset" style="text-align:center">

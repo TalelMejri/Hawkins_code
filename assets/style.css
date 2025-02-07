@@ -687,12 +687,14 @@ video.bg-video {
     height: 100vh;
     width: 100%;
     display: flex;
-    background: linear-gradient(25deg, #3a0d0d, #a50401);;
+    background: linear-gradient(180deg, #1d1414, #a50401);;
 }
 
 .leftBox{
     width: 68%;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .rightBox{
     width: 32%;
