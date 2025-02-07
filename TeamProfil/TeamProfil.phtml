@@ -1,3 +1,6 @@
+<script>
+    let problemsArray=<?php echo json_encode($open_problems); ?>;
+</script>
 <div class="teamProfile-container">
 <div class="app">
     <div class="content_opacity">
@@ -5,7 +8,7 @@
             <p class="welcome">Welcome <?= $_SESSION['nom'] ?> Team</p>
             <p class="para">
                 Welcome to the challenge where brilliance shines. <br> Your tasks await just below, ready to showcase your skills and creativity? <br> If so, let the competition begin!
-                <br><a href="#cards"><button id="start_button">Start now!</button></a>
+                <br><a href="#cards"> <button id="start_button" onclick="problemsArray.length === 0 ? alert('You are up to date') : null">Start now!</button></a>
             </p>
         </div>
         
