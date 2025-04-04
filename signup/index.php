@@ -4,6 +4,7 @@
 include "../dbConnected.php";
 
 
+<<<<<<< HEAD
 // if(isset($_SESSION['id'])){
 //     if($verify_team['IsAdmin']){
 //        header("location:../AdminProfil");
@@ -13,6 +14,17 @@ include "../dbConnected.php";
 // }else{
 //     header("location:../login");
 // }
+=======
+if(isset($_SESSION['id'])){
+    if($verify_team['IsAdmin']){
+        header("location:../AdminProfil");
+    }else{
+        header("location:../TeamProfil");
+    }
+}else{
+    header("location:../login");
+}
+>>>>>>> 8c006cf3fb6a07df109917651a278aa0e78a4dcf
 
 $nom = "";
 $errors = [];
@@ -35,7 +47,7 @@ if (isset($_POST['submit'])) {
         ]);
         $verify_team = $team_exist->fetch();
         if ($verify_team) {
-            $errors['nom'] = "Name Already Exist";
+            $errors['nom'] = "Name Already Exists";
         } else {
             $query = $pdo->prepare("INSERT INTO `teams`(`nom`, `password`, `IsAdmin`) VALUES (:nom,:pass,:IsAdmin) ");
             $query->execute([

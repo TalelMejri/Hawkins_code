@@ -1,1 +1,48 @@
-Team <a href="../logout.php">logout</a>
+<script>
+    let problemsArray=<?php echo json_encode($open_problems); ?>;
+</script>
+<div class="teamProfile-container">
+<div class="app">
+    <div class="content_opacity">
+        <div>
+            <p class="welcome">Welcome <?= $_SESSION['nom'] ?> Team</p>
+            <p class="para">
+                Welcome to the challenge where brilliance shines. <br> Your tasks await just below, ready to showcase your skills and creativity? <br> If so, let the competition begin!
+                <br><a href="#cards"> <button id="start_button" onclick="problemsArray.length === 0 ? alert('You are up to date') : null">Start now!</button></a>
+            </p>
+        </div>
+        
+    </div>
+</div>
+
+<div class="cards" id="cards">
+<?php
+        foreach($open_problems as $prblm){?>
+    <div class="card">
+    <div class="front-page"></div>
+    <div class="back-page">
+        <div class="card-content">
+            <h3 class="card-title"><?= $prblm["name"] ?></h3>
+            <div class="card-description">
+                <span class="status">Status: <b><?= ($prblm["IsCompleted"]) ? "Expired" : "Available" ?></b></span>
+                <p>Time: <?= substr($prblm["DateOpen"], 11) ?></p>
+                <p>Duration: <?= $prblm["Duration"] . "h" ?></p>
+                <p>Points: <b><?= $prblm["points"] ?></b></p>
+            </div>
+            <?php if ($prblm["IsCompleted"] == 0) { ?>
+                <a class="card-link" href="<?= sprintf(
+                    '../ProblemPage?id=%s&name=%s&time=%s&Duration=%s&points=%s',
+                    $prblm["id"],
+                    $prblm["name"],
+                    substr($prblm["DateOpen"], 11),
+                    $prblm["Duration"],
+                    $prblm["points"]
+                ) ?>"><button class="card-button">View problem</button></a>
+            <?php } ?>
+        </div>
+    </div>
+</div>
+
+    <?php }?>
+</div>
+</div>

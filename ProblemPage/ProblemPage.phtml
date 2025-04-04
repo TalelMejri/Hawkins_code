@@ -1,0 +1,23 @@
+<div class="problemPageContainer">
+    <div class="leftBox">
+        <img src="../Problems_photo/<?= $row1["photo"] ?>" alt="" style="max-width:100%;border-radius:7px;border: solid 3px black">
+    </div>
+    <div class="rightBox">
+        <form action="index.php?id=<?=$_GET["id"]?>&name=<?=$_GET["name"]?>&time=<?=$_GET["time"]?>&Duration=<?=$_GET["Duration"]?>&points=<?=$_GET["points"] ?>" class="ProblemForm" method="post" enctype="multipart/form-data">
+        <fieldset class="fieldset" style="text-align:center">
+            <legend><p style="text-align:center;font-size: 25px;margin-top: 10px;margin-right:10px"><?= $_GET["name"]?></p></legend>
+            <br>
+            <p>Points: <?= $_GET["points"]?></p>
+            <p>Time: <?= $_GET["time"]?></p>
+            <p>Duration: <?= $_GET["Duration"]."min"?></p>
+            <input type="file" name="file" style="border: none">
+            <input type="submit" value="SUBMIT" class="submit-btn" name="submit">
+            <?php if (count($errors) > 0) { ?>
+            <div style="background-color:red;padding:3px;margin-right:5px;margin-left:5px;margin-top:5px;border-radius:7px; color:white">
+                <?=  $errors['message']; ?>
+            </div>
+        <?php } ?>
+            </fieldset>
+        </form>
+    </div>
+</div>

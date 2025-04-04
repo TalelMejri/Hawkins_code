@@ -3,7 +3,7 @@ include "../dbConnected.php";
 session_start();
 if(!isset($_SESSION['id'])){
     header("location:../login");
- }
+}
 
 if (isset($_GET['IsOpen'])) {
     $query_count = $pdo->prepare("Update `problems` Set IsOpen=:isopen , DateOpen=:DateOpen where id=:id");
